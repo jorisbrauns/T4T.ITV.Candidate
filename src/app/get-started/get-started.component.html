@@ -1,0 +1,33 @@
+<div class="panel" *ngIf="interview">
+	<h1>Hi, {{ interview?.candidate.firstName + ' ' + interview?.candidate.lastName }}!</h1>
+
+	<h2>You are about to start your interview.</h2>
+
+	<ul>
+		<li *ngIf="interview.includesAssessment">Prior to the actual interview, you will be asked to complete a self-assessment.</li>
+		<li *ngIf="interview.includesAssessment">The interview will start as soon as you submit this assessment.</li>
+		<li *ngIf="!interview.includesAssessment">The interview will start as soon as you click the 'Begin the interview' button.</li>
+		<li>Questions are timed. You don't receive a bonus for finishing early.</li>
+		<li>Time is based on seniority level of the subject.</li>
+		<li>It is possible for a question to have multiple correct answers. You must indicate them all.</li>
+		<li>
+			The following subjects and seniority levels have been selected by the Team4Talent recruiter:
+			<ul>
+				<li *ngFor="let skill of interview?.skills; trackBy: id">{{ skill.tag.name }} ({{ getLevel(skill.level) }} level)</li>
+			</ul>
+		</li>
+		<li>
+			If the seniority levels for the given subjects match your experience, click the button to start!
+			<br/>
+			<small>(Note: If this is not the case, contact your recruiter to adjust the test.)</small>
+		</li>
+	</ul>
+
+	<br />
+
+	<button type="button" class="btn btn-primary btn-lg" (click)="getStarted()">Begin the inverview</button>
+</div>
+
+<div class="panel" *ngIf="!interview">
+	Loading information...
+</div>

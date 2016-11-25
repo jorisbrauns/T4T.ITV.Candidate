@@ -1,0 +1,29 @@
+.wrapper {
+   padding: 25px; 
+}
+
+.navbar {
+    border-radius: 0;
+}
+
+small {
+    top: -8px;
+    position: relative;
+}
+
+ul {
+    margin-top: 25px;
+}
+
+h1 {
+    font-size: 63px;
+}
+
+h2 {
+    font-size: 30px;
+}
+
+li {
+    font-size: 18px;
+}
+

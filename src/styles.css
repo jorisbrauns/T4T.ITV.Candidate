@@ -1,0 +1,22 @@
+body {
+    background-color: #f9f9f9;
+}
+
+.navbar-dark {
+    background-color: #0093A7!important;
+}
+
+h1, h2, h3 {
+    color: #0093A7;
+}
+
+hr {
+    height: 1px;
+    color: #EEE;
+    margin: 15px 15px 15px 0;
+}
+
+app-timer {
+    margin: 10px 0 10px 0;
+    display: block;
+}

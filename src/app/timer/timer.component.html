@@ -1,0 +1,6 @@
+<i class="fa fa-clock-o fa-3x" [style.color]="getTimerColor()"></i>
+<span class="timesup" *ngIf="_timeAllowed == 0">Time's up!</span>
+<span *ngIf="_timeAllowed != 0" [class]="addClassBlink()" [style.color]="getTimerColor()">{{ formatTime( _timeAllowed ) }}</span>
+<div class="wrapper-bar">
+	<div class="bar" [style.backgroundColor]="getBarColor()" [style.width]="getBarWidth()"></div>
+</div>

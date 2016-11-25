@@ -1,0 +1,11 @@
+input[type=range]{
+    width: 100%;
+}
+
+.slider {
+    width:600px;
+}
+
+.incidator label {
+    width: 61px;
+}

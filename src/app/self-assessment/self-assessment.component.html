@@ -1,0 +1,37 @@
+<h1>Self-assessment</h1>
+
+<p>
+	How would rate yourself for the following skills?<br/> Give yourself a score, ranging from 0 (very bad) to 10 (very good).
+</p>
+
+<form #form="ngForm" name="assessmentForm">
+
+	<div class="row" *ngFor="let skill of interview?.skills; let i = index; trackBy: id">
+		<div class="col-md-2">{{ skill.tag.name }}</div>
+		<div class="col-md-10">
+
+			<div class="slider">
+				<input type="range" step="1" min="1" max="10" [name]="skill.tag.name" [(ngModel)]="skill.rate" [id]="skill.tag.id">
+			</div>
+
+			<div class="incidator">
+				<label>1</label>
+				<label>2</label>
+				<label>3</label>
+				<label>4</label>
+				<label>5</label>
+				<label>6</label>
+				<label>7</label>
+				<label>8</label>
+				<label>9</label>
+				<label>10</label>
+			</div>
+
+		</div>
+	</div>
+
+	<br/>
+
+	<button type="submit" (click)="onSubmit()" class="btn btn-primary btn-lg">Begin</button>
+
+</form>

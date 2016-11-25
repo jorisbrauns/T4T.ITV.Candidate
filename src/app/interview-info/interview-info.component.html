@@ -1,0 +1,11 @@
+<h2>{{ interview?.candidate.firstName + ' ' + interview?.candidate.lastName }}</h2>
+<p>
+	Team4Talent (T4T) is specialized in Microsoft .NET: Because of our dedicated wizards and their magic powers we stand out
+	from the crowd.
+</p>
+
+<hr/>
+
+<ul>
+	<li *ngFor="let skill of interview?.skills; trackBy: id">{{ skill.tag.name }} ({{ getLevel(skill.level) }} level)</li>
+</ul>

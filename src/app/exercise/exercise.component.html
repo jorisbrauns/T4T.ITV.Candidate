@@ -1,0 +1,26 @@
+<div class="row" *ngIf="exercise && interview">
+	<div class="col-md-8">
+		<form novalidate [formGroup]="form">
+
+			<div class="panel">
+				<h2>{{exercise.body}}</h2>
+				<div class="form-check" *ngFor="let answer of exercise?.answers; let i = index; trackBy: multipleChoiceAnswerId">
+					<label class="form-check-label">
+            			<input class="form-check-input" type="checkbox" [formControlName]="answer.multipleChoiceAnswerId" [id]="answer.multipleChoiceAnswerId" [value]="answer.multipleChoiceAnswerId" > {{ answer.body }}
+					</label>
+				</div>
+			</div>
+		
+			<br/>
+
+			<button type="button" class="btn btn-primary btn-lg" (click)="nextExercise()">Submit selected answer(s)</button>
+		</form>
+	</div>
+	<div class="col-md-4 panel">
+		<app-interview-info [guidId]="interviewId"></app-interview-info>
+
+		<app-timer [timeAllowed]="exercise.timeAllowedMilliseconds" (timesUp)="timesUp($event)"></app-timer>
+
+		<app-progressbar [currentStep]="exercise.exercisesAnswered+1" [totalSteps]="exercise.exercisesTotal"></app-progressbar>
+	</div>
+</div>
